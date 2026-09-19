@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF7E6">
+  <title>公演タイムテーブル | 市川学園文化祭</title>
+  <meta name="description" content="市川学園文化祭の公演タイムテーブル。日付と会場で絞り込み、見たいステージをマイ予定に登録できます。">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html" aria-label="市川学園文化祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+        <span class="brand__text"><small>市川学園</small><strong>文化祭</strong></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開閉する" data-menu-toggle>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+    </div>
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+    <div class="awning" aria-hidden="true"></div>
+    <div class="drawer__head">
+      <p class="drawer__title">メニュー<small>どこへ行こう？</small></p>
+      <button class="drawer__close" type="button" data-menu-close aria-label="メニューを閉じる">×</button>
+    </div>
+    <ul class="drawer__list">
+      <li data-c="mustard"><a href="index.html"><span class="drawer__ico" aria-hidden="true">🏠</span><span><b>ホーム</b><small>入り口にもどる</small></span></a></li>
+      <li data-c="red"><a href="exhibits.html"><span class="drawer__ico" aria-hidden="true">🎪</span><span><b>企画展示一覧</b><small>クラス・部活の出し物</small></span></a></li>
+      <li data-c="blue"><a href="timetable.html" aria-current="page"><span class="drawer__ico" aria-hidden="true">🎭</span><span><b>公演タイムテーブル</b><small>ステージの時間割</small></span></a></li>
+      <li data-c="mustard"><a href="news.html"><span class="drawer__ico" aria-hidden="true">📣</span><span><b>実行委員会からのお知らせ</b><small>大切な連絡はここ</small></span></a></li>
+      <li data-c="green"><a href="lostfound.html"><span class="drawer__ico" aria-hidden="true">🔍</span><span><b>落し物掲示板</b><small>届いている落し物</small></span></a></li>
+    </ul>
+    <p class="drawer__foot">市川学園文化祭実行委員会</p>
+  </nav>
+
+  <main id="main" class="theme-blue">
+
+    <section class="page-hero">
+      <div class="bunting" aria-hidden="true"></div>
+      <div class="page-hero__plate">
+        <span class="page-hero__ico" aria-hidden="true">🎭</span>
+        <h1 class="page-hero__title">公演タイムテーブル</h1>
+        <p class="page-hero__lead">見たいステージに ☆ をつけて、自分だけの予定表に</p>
+      </div>
+    </section>
+
+    <nav class="crumbs" aria-label="現在のページ">
+      <a href="index.html">ホーム</a> ＞ <span aria-current="page">公演タイムテーブル</span>
+    </nav>
+
+    <div class="section" data-timetable>
+
+      <!-- 日付タブ -->
+      <div class="daytabs" role="tablist" aria-label="開催日">
+        <button class="daytab" type="button" role="tab" id="tab-d1" aria-controls="panel-d1" aria-selected="true" data-day-tab>
+          <b>1日目</b><small>○月○日（○）</small>
+        </button>
+        <button class="daytab" type="button" role="tab" id="tab-d2" aria-controls="panel-d2" aria-selected="false" tabindex="-1" data-day-tab>
+          <b>2日目</b><small>○月○日（○）</small>
+        </button>
+      </div>
+
+      <!-- 会場・マイ予定 -->
+      <div class="tt-tools">
+        <div class="chips" role="group" aria-label="会場で絞り込む">
+          <button class="chip" type="button" data-stage-chip="all" aria-pressed="true">すべての会場</button>
+          <button class="chip st-gym" type="button" data-stage-chip="gym" aria-pressed="false"><span class="chip__dot" aria-hidden="true"></span>体育館</button>
+          <button class="chip st-hall" type="button" data-stage-chip="hall" aria-pressed="false"><span class="chip__dot" aria-hidden="true"></span>講堂</button>
+          <button class="chip st-yard" type="button" data-stage-chip="yard" aria-pressed="false"><span class="chip__dot" aria-hidden="true"></span>中庭ステージ</button>
+        </div>
+        <div class="chips">
+          <button class="chip chip--fav" type="button" data-fav-only aria-pressed="false">★ マイ予定だけ見る</button>
+        </div>
+      </div>
+
+      <p class="result-count" aria-live="polite"><b data-count>7</b> 件のステージ</p>
+
+      <!-- ★出演情報は<li>単位で編集できます（data-stage は gym / hall / yard、data-id は重複しないように） -->
+
+      <!-- ===== 1日目 ===== -->
+      <div id="panel-d1" role="tabpanel" aria-labelledby="tab-d1" data-day-panel>
+        <ol class="timeline">
+
+          <li class="slot st-gym" data-slot data-id="d1-1" data-stage="gym">
+            <div class="slot__time"><b>10:00</b><small>〜10:20</small></div>
+            <div class="slot__card">
+              <span class="slot__place">体育館</span>
+              <h2 class="slot__title">オープニングセレモニー</h2>
+              <p class="slot__by">文化祭実行委員会</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-hall" data-slot data-id="d1-2" data-stage="hall">
+            <div class="slot__time"><b>10:30</b><small>〜11:10</small></div>
+            <div class="slot__card">
+              <span class="slot__place">講堂</span>
+              <h2 class="slot__title">吹奏楽部 コンサート</h2>
+              <p class="slot__by">吹奏楽部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-yard" data-slot data-id="d1-3" data-stage="yard">
+            <div class="slot__time"><b>11:00</b><small>〜11:30</small></div>
+            <div class="slot__card">
+              <span class="slot__place">中庭ステージ</span>
+              <h2 class="slot__title">ダンス部 ステージ</h2>
+              <p class="slot__by">ダンス部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-hall" data-slot data-id="d1-4" data-stage="hall">
+            <div class="slot__time"><b>12:00</b><small>〜12:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">講堂</span>
+              <h2 class="slot__title">演劇部『星降る商店街』</h2>
+              <p class="slot__by">演劇部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-gym" data-slot data-id="d1-5" data-stage="gym">
+            <div class="slot__time"><b>13:00</b><small>〜13:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">体育館</span>
+              <h2 class="slot__title">軽音楽部 ライブ</h2>
+              <p class="slot__by">軽音楽部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-gym" data-slot data-id="d1-6" data-stage="gym">
+            <div class="slot__time"><b>14:00</b><small>〜14:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">体育館</span>
+              <h2 class="slot__title">全校クイズ大会</h2>
+              <p class="slot__by">文化祭実行委員会</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-yard" data-slot data-id="d1-7" data-stage="yard">
+            <div class="slot__time"><b>15:00</b><small>〜15:30</small></div>
+            <div class="slot__card">
+              <span class="slot__place">中庭ステージ</span>
+              <h2 class="slot__title">有志ステージ</h2>
+              <p class="slot__by">有志グループ</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+        </ol>
+        <p class="empty" data-panel-empty hidden>この条件のステージはありません。会場や「マイ予定」の絞り込みを見直してください。</p>
+      </div>
+
+      <!-- ===== 2日目 ===== -->
+      <div id="panel-d2" role="tabpanel" aria-labelledby="tab-d2" data-day-panel hidden>
+        <ol class="timeline">
+
+          <li class="slot st-yard" data-slot data-id="d2-1" data-stage="yard">
+            <div class="slot__time"><b>10:00</b><small>〜10:30</small></div>
+            <div class="slot__card">
+              <span class="slot__place">中庭ステージ</span>
+              <h2 class="slot__title">書道パフォーマンス</h2>
+              <p class="slot__by">書道部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-hall" data-slot data-id="d2-2" data-stage="hall">
+            <div class="slot__time"><b>10:40</b><small>〜11:20</small></div>
+            <div class="slot__card">
+              <span class="slot__place">講堂</span>
+              <h2 class="slot__title">合唱部 ミニコンサート</h2>
+              <p class="slot__by">合唱部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-hall" data-slot data-id="d2-3" data-stage="hall">
+            <div class="slot__time"><b>12:00</b><small>〜12:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">講堂</span>
+              <h2 class="slot__title">演劇部『星降る商店街』</h2>
+              <p class="slot__by">演劇部（2回目の公演）</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-gym" data-slot data-id="d2-4" data-stage="gym">
+            <div class="slot__time"><b>13:00</b><small>〜13:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">体育館</span>
+              <h2 class="slot__title">軽音楽部 ライブ</h2>
+              <p class="slot__by">軽音楽部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-yard" data-slot data-id="d2-5" data-stage="yard">
+            <div class="slot__time"><b>14:00</b><small>〜14:40</small></div>
+            <div class="slot__card">
+              <span class="slot__place">中庭ステージ</span>
+              <h2 class="slot__title">ダンス部 ステージ</h2>
+              <p class="slot__by">ダンス部</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+          <li class="slot st-gym" data-slot data-id="d2-6" data-stage="gym">
+            <div class="slot__time"><b>15:00</b><small>〜15:30</small></div>
+            <div class="slot__card">
+              <span class="slot__place">体育館</span>
+              <h2 class="slot__title">表彰式・エンディング</h2>
+              <p class="slot__by">文化祭実行委員会</p>
+              <button class="star" type="button" aria-pressed="false" data-star>☆</button>
+            </div>
+          </li>
+
+        </ol>
+        <p class="empty" data-panel-empty hidden>この条件のステージはありません。会場や「マイ予定」の絞り込みを見直してください。</p>
+      </div>
+
+      <p class="sec-note tt-foot">☆ をつけた予定は、このスマホの中だけに保存されます。時間は変更になることがあるので、最新の情報は<a href="news.html">お知らせ</a>で確認してください。</p>
+
+    </div>
+
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="bunting" aria-hidden="true"></div>
+    <div class="site-footer__body">
+      <p class="site-footer__name">市川学園文化祭</p>
+      <p class="site-footer__sub">文化祭実行委員会</p>
+      <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="exhibits.html">企画展示一覧</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="lostfound.html">落し物掲示板</a></li>
+      </ul>
+      <p class="copy">© 2026 市川学園文化祭実行委員会</p>
+    </div>
+    <div class="pavement" aria-hidden="true"></div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="ページの先頭へ戻る">↑</button>
+</div>
+</body>
+</html>

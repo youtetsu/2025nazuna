@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF7E6">
+  <title>企画展示一覧 | 市川学園文化祭</title>
+  <meta name="description" content="市川学園文化祭の企画展示一覧。飲食・展示・体験・物販をカテゴリや言葉で探せます。">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html" aria-label="市川学園文化祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+        <span class="brand__text"><small>市川学園</small><strong>文化祭</strong></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開閉する" data-menu-toggle>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+    </div>
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+    <div class="awning" aria-hidden="true"></div>
+    <div class="drawer__head">
+      <p class="drawer__title">メニュー<small>どこへ行こう？</small></p>
+      <button class="drawer__close" type="button" data-menu-close aria-label="メニューを閉じる">×</button>
+    </div>
+    <ul class="drawer__list">
+      <li data-c="mustard"><a href="index.html"><span class="drawer__ico" aria-hidden="true">🏠</span><span><b>ホーム</b><small>入り口にもどる</small></span></a></li>
+      <li data-c="red"><a href="exhibits.html" aria-current="page"><span class="drawer__ico" aria-hidden="true">🎪</span><span><b>企画展示一覧</b><small>クラス・部活の出し物</small></span></a></li>
+      <li data-c="blue"><a href="timetable.html"><span class="drawer__ico" aria-hidden="true">🎭</span><span><b>公演タイムテーブル</b><small>ステージの時間割</small></span></a></li>
+      <li data-c="mustard"><a href="news.html"><span class="drawer__ico" aria-hidden="true">📣</span><span><b>実行委員会からのお知らせ</b><small>大切な連絡はここ</small></span></a></li>
+      <li data-c="green"><a href="lostfound.html"><span class="drawer__ico" aria-hidden="true">🔍</span><span><b>落し物掲示板</b><small>届いている落し物</small></span></a></li>
+    </ul>
+    <p class="drawer__foot">市川学園文化祭実行委員会</p>
+  </nav>
+
+  <main id="main" class="theme-red">
+
+    <section class="page-hero">
+      <div class="bunting" aria-hidden="true"></div>
+      <div class="page-hero__plate">
+        <span class="page-hero__ico" aria-hidden="true">🎪</span>
+        <h1 class="page-hero__title">企画展示一覧</h1>
+        <p class="page-hero__lead">クラスや部活のお店を、のぞいてみよう</p>
+      </div>
+    </section>
+
+    <nav class="crumbs" aria-label="現在のページ">
+      <a href="index.html">ホーム</a> ＞ <span aria-current="page">企画展示一覧</span>
+    </nav>
+
+    <div class="section" data-filter-root>
+      <div class="tools">
+        <label class="search">
+          <span class="search__ico" aria-hidden="true">🔍</span>
+          <input type="search" placeholder="企画名・団体名・場所で探す" data-search aria-label="企画を検索">
+        </label>
+        <div class="chips" role="group" aria-label="カテゴリで絞り込む">
+          <button class="chip" type="button" data-chip="all" aria-pressed="true">すべて</button>
+          <button class="chip" type="button" data-chip="food" aria-pressed="false">飲食</button>
+          <button class="chip" type="button" data-chip="exhibit" aria-pressed="false">展示</button>
+          <button class="chip" type="button" data-chip="experience" aria-pressed="false">体験</button>
+          <button class="chip" type="button" data-chip="goods" aria-pressed="false">物販</button>
+        </div>
+      </div>
+
+      <p class="result-count" aria-live="polite"><b data-count>10</b> 件の企画</p>
+
+      <!-- ★企画は<li>を1つ足すだけで増やせます（data-category は food / exhibit / experience / goods） -->
+      <ul class="shop-list">
+
+        <li class="shop" id="e1" data-item data-category="food">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">飲食</span><span>校庭 屋台エリア</span></div>
+            <h2 class="shop__title">まる福 たこ焼き</h2>
+            <p class="shop__org">2年A組</p>
+            <p class="shop__desc">外はカリッ、中はとろり。焼きたてを目の前でどうぞ。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e2" data-item data-category="food">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">飲食</span><span>本館1階 3-B教室</span></div>
+            <h2 class="shop__title">ふわもちクレープ工房</h2>
+            <p class="shop__org">3年B組</p>
+            <p class="shop__desc">季節のフルーツとクリームをたっぷり包みます。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e3" data-item data-category="experience">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">体験</span><span>本館2階 2-C教室</span></div>
+            <h2 class="shop__title">ドキドキ ミステリーハウス</h2>
+            <p class="shop__org">2年C組</p>
+            <p class="shop__desc">教室まるごと迷路とお化け屋敷。出口までたどりつけるかな？</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e4" data-item data-category="exhibit">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">展示</span><span>本館3階 写真展示室</span></div>
+            <h2 class="shop__title">写真展「まちの色」</h2>
+            <p class="shop__org">写真部</p>
+            <p class="shop__desc">部員が切りとった、見慣れた街のいろいろな表情を展示します。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e5" data-item data-category="experience">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">体験</span><span>理科棟 実験室</span></div>
+            <h2 class="shop__title">サイエンスショー</h2>
+            <p class="shop__org">科学部</p>
+            <p class="shop__desc">身近な材料で不思議な現象を体験。見て、触って、びっくり。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e6" data-item data-category="experience">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">体験</span><span>本館1階 1-D教室</span></div>
+            <h2 class="shop__title">わくわく縁日ゲーム</h2>
+            <p class="shop__org">1年D組</p>
+            <p class="shop__desc">射的・ヨーヨーすくい・輪投げ。景品もあります。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e7" data-item data-category="goods">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">物販</span><span>図書館前</span></div>
+            <h2 class="shop__title">古本＆手作り雑貨マーケット</h2>
+            <p class="shop__org">図書委員会</p>
+            <p class="shop__desc">読み終えた本と手作り雑貨を、お手ごろ価格で並べます。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e8" data-item data-category="exhibit">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">展示</span><span>美術室</span></div>
+            <h2 class="shop__title">美術部 作品展</h2>
+            <p class="shop__org">美術部</p>
+            <p class="shop__desc">絵画・イラスト・立体作品など、一年の成果をご覧ください。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e9" data-item data-category="experience">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">体験</span><span>校内各所（受付は本部）</span></div>
+            <h2 class="shop__title">校内めぐり 謎解きラリー</h2>
+            <p class="shop__org">有志チーム</p>
+            <p class="shop__desc">謎を解きながら校内をひとまわり。全問正解でプレゼント。</p>
+          </div>
+        </li>
+
+        <li class="shop" id="e10" data-item data-category="food">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="shop__body">
+            <div class="shop__meta"><span class="tag">飲食</span><span>和室</span></div>
+            <h2 class="shop__title">和カフェ 茶の間</h2>
+            <p class="shop__org">茶道部</p>
+            <p class="shop__desc">抹茶と和菓子で、ほっとひと休み。</p>
+          </div>
+        </li>
+
+      </ul>
+
+      <p class="empty" data-empty hidden>見つかりませんでした。ほかの言葉やカテゴリで探してみてください。</p>
+    </div>
+
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="bunting" aria-hidden="true"></div>
+    <div class="site-footer__body">
+      <p class="site-footer__name">市川学園文化祭</p>
+      <p class="site-footer__sub">文化祭実行委員会</p>
+      <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="timetable.html">公演タイムテーブル</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="lostfound.html">落し物掲示板</a></li>
+      </ul>
+      <p class="copy">© 2026 市川学園文化祭実行委員会</p>
+    </div>
+    <div class="pavement" aria-hidden="true"></div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="ページの先頭へ戻る">↑</button>
+</div>
+</body>
+</html>

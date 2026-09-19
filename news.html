@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF7E6">
+  <title>実行委員会からのお知らせ | 市川学園文化祭</title>
+  <meta name="description" content="市川学園文化祭 実行委員会からのお知らせ。ご来場前にご確認いただきたい情報を掲載しています。">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html" aria-label="市川学園文化祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+        <span class="brand__text"><small>市川学園</small><strong>文化祭</strong></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開閉する" data-menu-toggle>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+    </div>
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+    <div class="awning" aria-hidden="true"></div>
+    <div class="drawer__head">
+      <p class="drawer__title">メニュー<small>どこへ行こう？</small></p>
+      <button class="drawer__close" type="button" data-menu-close aria-label="メニューを閉じる">×</button>
+    </div>
+    <ul class="drawer__list">
+      <li data-c="mustard"><a href="index.html"><span class="drawer__ico" aria-hidden="true">🏠</span><span><b>ホーム</b><small>入り口にもどる</small></span></a></li>
+      <li data-c="red"><a href="exhibits.html"><span class="drawer__ico" aria-hidden="true">🎪</span><span><b>企画展示一覧</b><small>クラス・部活の出し物</small></span></a></li>
+      <li data-c="blue"><a href="timetable.html"><span class="drawer__ico" aria-hidden="true">🎭</span><span><b>公演タイムテーブル</b><small>ステージの時間割</small></span></a></li>
+      <li data-c="mustard"><a href="news.html" aria-current="page"><span class="drawer__ico" aria-hidden="true">📣</span><span><b>実行委員会からのお知らせ</b><small>大切な連絡はここ</small></span></a></li>
+      <li data-c="green"><a href="lostfound.html"><span class="drawer__ico" aria-hidden="true">🔍</span><span><b>落し物掲示板</b><small>届いている落し物</small></span></a></li>
+    </ul>
+    <p class="drawer__foot">市川学園文化祭実行委員会</p>
+  </nav>
+
+  <main id="main" class="theme-mustard">
+
+    <section class="page-hero">
+      <div class="bunting" aria-hidden="true"></div>
+      <div class="page-hero__plate">
+        <span class="page-hero__ico" aria-hidden="true">📣</span>
+        <h1 class="page-hero__title">実行委員会からのお知らせ</h1>
+        <p class="page-hero__lead">ご来場前に、ひととおりご確認ください</p>
+      </div>
+    </section>
+
+    <nav class="crumbs" aria-label="現在のページ">
+      <a href="index.html">ホーム</a> ＞ <span aria-current="page">実行委員会からのお知らせ</span>
+    </nav>
+
+    <div class="section" data-filter-root>
+      <div class="tools">
+        <div class="chips" role="group" aria-label="種類で絞り込む">
+          <button class="chip chip--mustard" type="button" data-chip="all" aria-pressed="true">すべて</button>
+          <button class="chip chip--mustard" type="button" data-chip="important" aria-pressed="false">重要</button>
+          <button class="chip chip--mustard" type="button" data-chip="info" aria-pressed="false">お知らせ</button>
+          <button class="chip chip--mustard" type="button" data-chip="caution" aria-pressed="false">注意</button>
+        </div>
+      </div>
+
+      <p class="result-count" aria-live="polite"><b data-count>5</b> 件のお知らせ　<span>タップすると詳しく読めます</span></p>
+
+      <!-- ★お知らせは<details>を1つ足すだけで増やせます（新しいものを上に。data-category は important / info / caution） -->
+      <div class="notice-list">
+
+        <details class="notice" id="n1" data-item data-category="important" open>
+          <summary>
+            <div class="notice__meta"><span class="tag">重要</span><time datetime="2026-09-15">9月15日</time></div>
+            <p class="notice__title">ご来場前にご確認ください（入場方法・持ち物）</p>
+          </summary>
+          <div class="notice__body">
+            <p>ご来場のみなさまに、次の点へのご協力をお願いします。</p>
+            <ul class="bullets">
+              <li>入場方法や受付の場所は、当日の案内に従ってください。</li>
+              <li>貴重品は、ご自身で管理をお願いします。</li>
+              <li>校内での飲食は、指定されたエリアでお願いします。</li>
+              <li>スタッフの指示には、必ず従ってください。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="notice" id="n2" data-item data-category="info">
+          <summary>
+            <div class="notice__meta"><span class="tag">お知らせ</span><time datetime="2026-09-12">9月12日</time></div>
+            <p class="notice__title">パンフレットの配布場所について</p>
+          </summary>
+          <div class="notice__body">
+            <p>パンフレットは本部受付で配布します。企画の場所やステージの時間をまとめています。数に限りがあるため、なくなり次第終了となります。</p>
+          </div>
+        </details>
+
+        <details class="notice" id="n3" data-item data-category="info">
+          <summary>
+            <div class="notice__meta"><span class="tag">お知らせ</span><time datetime="2026-09-10">9月10日</time></div>
+            <p class="notice__title">企画・展示の情報を更新しました</p>
+          </summary>
+          <div class="notice__body">
+            <p>企画展示一覧のページに、新しい企画を追加しました。ぜひ<a href="exhibits.html">企画展示一覧</a>もご覧ください。</p>
+          </div>
+        </details>
+
+        <details class="notice" id="n4" data-item data-category="caution">
+          <summary>
+            <div class="notice__meta"><span class="tag">注意</span><time datetime="2026-09-08">9月8日</time></div>
+            <p class="notice__title">ゴミの分別とマナーのお願い</p>
+          </summary>
+          <div class="notice__body">
+            <p>みんなで気持ちよく過ごせるよう、ご協力をお願いします。</p>
+            <ul class="bullets">
+              <li>ゴミは分別して、所定のゴミ箱へお願いします。</li>
+              <li>通路をふさがないよう、立ち止まる場所にご注意ください。</li>
+              <li>混雑時は、係の案内に沿って順番にお進みください。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="notice" id="n5" data-item data-category="info">
+          <summary>
+            <div class="notice__meta"><span class="tag">お知らせ</span><time datetime="2026-09-05">9月5日</time></div>
+            <p class="notice__title">ホームページを公開しました</p>
+          </summary>
+          <div class="notice__body">
+            <p>市川学園文化祭のホームページを公開しました。企画、ステージ、お知らせ、落し物の情報を、順次ここで更新していきます。</p>
+          </div>
+        </details>
+
+      </div>
+
+      <p class="empty" data-empty hidden>該当するお知らせはありません。</p>
+    </div>
+
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="bunting" aria-hidden="true"></div>
+    <div class="site-footer__body">
+      <p class="site-footer__name">市川学園文化祭</p>
+      <p class="site-footer__sub">文化祭実行委員会</p>
+      <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="exhibits.html">企画展示一覧</a></li>
+        <li><a href="timetable.html">公演タイムテーブル</a></li>
+        <li><a href="lostfound.html">落し物掲示板</a></li>
+      </ul>
+      <p class="copy">© 2026 市川学園文化祭実行委員会</p>
+    </div>
+    <div class="pavement" aria-hidden="true"></div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="ページの先頭へ戻る">↑</button>
+</div>
+</body>
+</html>
