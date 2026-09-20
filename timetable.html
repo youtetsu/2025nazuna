@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#FFF7E6">
+  <title>公演タイムテーブル | なずな祭</title>
+  <meta name="description" content="なずな祭の公演タイムテーブル。日付と会場で絞り込み、見たいステージをマイ予定に登録できます。">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+
+      <a class="brand" href="index.html" aria-label="なずな祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+        <span class="brand__text">
+          <small>なずな祭</small>
+          <strong>ホーム</strong>
+        </span>
+      </a>
+
+      <button
+        class="menu-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="drawer"
+        aria-label="メニューを開閉する"
+        data-menu-toggle
+      >
+        <span class="menu-btn__icon" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+
+    </div>
+
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+
+    <div class="awning" aria-hidden="true"></div>
+
+    <div class="drawer__head">
+      <p class="drawer__title">
+        メニュー
+        <small>どこへ行こう？</small>
+      </p>
+
+      <button
+        class="drawer__close"
+        type="button"
+        data-menu-close
+        aria-label="メニューを閉じる"
+      >
+        ×
+      </button>
+    </div>
+
+    <ul class="drawer__list">
+
+      <li data-c="mustard">
+        <a href="index.html">
+          <span class="drawer__ico" aria-hidden="true">🏠</span>
+          <span>
+            <b>ホーム</b>
+            <small>入り口にもどる</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="red">
+        <a href="exhibits.html">
+          <span class="drawer__ico" aria-hidden="true">🎪</span>
+          <span>
+            <b>企画展示一覧</b>
+            <small>クラス・部活の出し物</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="blue">
+        <a href="timetable.html" aria-current="page">
+          <span class="drawer__ico" aria-hidden="true">🎭</span>
+          <span>
+            <b>公演タイムテーブル</b>
+            <small>ステージの時間割</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="mustard">
+        <a href="news.html">
+          <span class="drawer__ico" aria-hidden="true">📣</span>
+          <span>
+            <b>実行委員会からのお知らせ</b>
+            <small>大切な連絡はここ</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="green">
+        <a href="lostfound.html">
+          <span class="drawer__ico" aria-hidden="true">🔍</span>
+          <span>
+            <b>落し物掲示板</b>
+            <small>届いている落し物</small>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+
+    <p class="drawer__foot">なずな祭実行委員会</p>
+
+  </nav>
+
+
+  <!-- ===== メイン ===== -->
+  <main id="main" class="theme-blue">
+
+    <!-- ===== ページタイトル ===== -->
+    <section class="page-hero">
+
+      <div class="bunting" aria-hidden="true"></div>
+
+      <div class="page-hero__plate">
+
+        <span class="page-hero__ico" aria-hidden="true">🎭</span>
+
+        <h1 class="page-hero__title">
+          公演タイムテーブル
+        </h1>
+
+        <p class="page-hero__lead">
+          見たいステージに ☆ をつけて、自分だけの予定表に
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===== パンくず ===== -->
+    <nav class="crumbs" aria-label="現在のページ">
+      <a href="index.html">ホーム</a>
+      ＞
+      <span aria-current="page">公演タイムテーブル</span>
+    </nav>
+
+
+    <!-- ===== タイムテーブル ===== -->
+    <div class="section" data-timetable>
+
+
+      <!-- ===== 日付タブ ===== -->
+      <div
+        class="daytabs"
+        role="tablist"
+        aria-label="開催日"
+      >
+
+        <button
+          class="daytab"
+          type="button"
+          role="tab"
+          id="tab-d1"
+          aria-controls="panel-d1"
+          aria-selected="true"
+          data-day-tab="1"
+        >
+          <b>1日目</b>
+          <small>9月19日（土）</small>
+        </button>
+
+        <button
+          class="daytab"
+          type="button"
+          role="tab"
+          id="tab-d2"
+          aria-controls="panel-d2"
+          aria-selected="false"
+          tabindex="-1"
+          data-day-tab="2"
+        >
+          <b>2日目</b>
+          <small>9月20日（日）</small>
+        </button>
+
+      </div>
+
+
+      <!-- ===== 絞り込み ===== -->
+      <div class="tt-tools">
+
+        <div
+          class="chips"
+          role="group"
+          aria-label="会場で絞り込む"
+        >
+
+          <button
+            class="chip"
+            type="button"
+            data-stage-chip="all"
+            aria-pressed="true"
+          >
+            すべての会場
+          </button>
+
+          <button
+            class="chip st-gym"
+            type="button"
+            data-stage-chip="gym"
+            aria-pressed="false"
+          >
+            <span class="chip__dot" aria-hidden="true"></span>
+            アリーナ
+          </button>
+
+          <button
+            class="chip st-hall"
+            type="button"
+            data-stage-chip="hall"
+            aria-pressed="false"
+          >
+            <span class="chip__dot" aria-hidden="true"></span>
+            國枝ホール
+          </button>
+
+          <button
+            class="chip st-yard"
+            type="button"
+            data-stage-chip="yard"
+            aria-pressed="false"
+          >
+            <span class="chip__dot" aria-hidden="true"></span>
+            北館2階
+          </button>
+
+        </div>
+
+
+        <div class="chips">
+
+          <button
+            class="chip chip--fav"
+            type="button"
+            data-fav-only
+            aria-pressed="false"
+          >
+            ★ マイ予定だけ見る
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===== 件数 ===== -->
+      <p class="result-count" aria-live="polite">
+        <b data-count>0</b> 件のステージ
+      </p>
+
+
+      <!-- ==================================================
+           ここだけ編集すればOK
+           ==================================================
+
+           data-time  = 開始時間
+           data-end   = 終了時間
+           data-stage = gym / hall / yard
+
+           中身は
+
+           公演名 / 出演団体
+
+           の形式。
+
+           例：
+
+           <li data-time="13:00" data-end="13:40" data-stage="gym">
+             軽音楽部 ライブ / 軽音楽部
+           </li>
+
+           ================================================== -->
+
+
+<!-- ===== 1日目 ===== -->
+<div
+  id="panel-d1"
+  role="tabpanel"
+  aria-labelledby="tab-d1"
+  data-day-panel="1"
+>
+
+  <ol class="timeline">
+
+    <li id="d1-opening" data-time="10:00" data-end="10:20" data-stage="gym">
+      オープニングセレモニー / 文化祭実行委員会
+    </li>
+
+    <li id="d1-brass" data-time="10:30" data-end="11:10" data-stage="hall">
+      吹奏楽部 コンサート / 吹奏楽部
+    </li>
+
+    <li id="d1-dance" data-time="11:00" data-end="11:30" data-stage="yard">
+      ダンス部 ステージ / ダンス部
+    </li>
+
+    <li id="d1-drama" data-time="12:00" data-end="12:40" data-stage="hall">
+      演劇部『星降る商店街』 / 演劇部
+    </li>
+
+    <li id="d1-lightmusic" data-time="13:00" data-end="13:40" data-stage="gym">
+      軽音楽部 ライブ / 軽音楽部
+    </li>
+
+    <li id="d1-quiz" data-time="14:00" data-end="14:40" data-stage="gym">
+      全校クイズ大会 / 文化祭実行委員会
+    </li>
+
+    <li id="d1-volunteer" data-time="15:00" data-end="15:30" data-stage="yard">
+      有志ステージ / 有志グループ
+    </li>
+
+  </ol>
+
+  <p
+    class="empty"
+    data-panel-empty
+    hidden
+  >
+    この条件のステージはありません。
+    会場や「マイ予定」の絞り込みを見直してください。
+  </p>
+
+</div>
+
+
+<!-- ===== 2日目 ===== -->
+<div
+  id="panel-d2"
+  role="tabpanel"
+  aria-labelledby="tab-d2"
+  data-day-panel="2"
+  hidden
+>
+
+  <ol class="timeline">
+
+    <li id="d2-calligraphy" data-time="10:00" data-end="10:30" data-stage="yard">
+      書道パフォーマンス / 書道部
+    </li>
+
+    <li id="d2-chorus" data-time="10:40" data-end="11:20" data-stage="hall">
+      合唱部 ミニコンサート / 合唱部
+    </li>
+
+    <li id="d2-drama" data-time="12:00" data-end="12:40" data-stage="hall">
+      演劇部『星降る商店街』 / 演劇部（2回目の公演）
+    </li>
+
+    <li id="d2-lightmusic" data-time="13:00" data-end="13:40" data-stage="gym">
+      軽音楽部 ライブ / 軽音楽部
+    </li>
+
+    <li id="d2-dance" data-time="14:00" data-end="14:40" data-stage="yard">
+      ダンス部 ステージ / ダンス部
+    </li>
+
+    <li id="d2-ending" data-time="15:00" data-end="15:30" data-stage="gym">
+      表彰式・エンディング / 文化祭実行委員会
+    </li>
+
+  </ol>
+
+  <p
+    class="empty"
+    data-panel-empty
+    hidden
+  >
+    この条件のステージはありません。
+    会場や「マイ予定」の絞り込みを見直してください。
+  </p>
+
+</div>
+
+        </ol>
+
+        <p
+          class="empty"
+          data-panel-empty
+          hidden
+        >
+          この条件のステージはありません。
+          会場や「マイ予定」の絞り込みを見直してください。
+        </p>
+
+      </div>
+
+
+      <!-- ===== 注意書き ===== -->
+      <p class="sec-note tt-foot">
+        ☆ をつけた予定は、このスマホの中だけに保存されます。
+        時間は変更になることがあるので、
+        最新の情報は<a href="news.html">お知らせ</a>で確認してください。
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+
+    <div class="bunting" aria-hidden="true"></div>
+
+    <div class="site-footer__body">
+
+      <p class="site-footer__name">
+        なずな祭
+      </p>
+
+      <p class="site-footer__sub">
+        文化祭実行委員会
+      </p>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="index.html">ホーム</a>
+        </li>
+
+        <li>
+          <a href="exhibits.html">企画展示一覧</a>
+        </li>
+
+        <li>
+          <a href="news.html">お知らせ</a>
+        </li>
+
+        <li>
+          <a href="lostfound.html">落し物掲示板</a>
+        </li>
+
+      </ul>
+
+      <p class="copy">
+        © 2026 なずな祭実行委員会
+      </p>
+
+    </div>
+
+    <div class="pavement" aria-hidden="true"></div>
+
+  </footer>
+
+
+  <!-- ===== ページトップ ===== -->
+  <button
+    class="to-top"
+    type="button"
+    aria-label="ページの先頭へ戻る"
+  >
+    ↑
+  </button>
+
+</div>
+
+</body>
+</html>

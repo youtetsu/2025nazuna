@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF7E6">
+  <title>企画展示一覧 | 市川学園文化祭</title>
+  <meta name="description" content="市川学園文化祭の企画展示一覧。飲食・展示・体験・物販をカテゴリや言葉で探せます。">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html" aria-label="市川学園文化祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+        <span class="brand__text"><small>市川学園</small><strong>文化祭</strong></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開閉する" data-menu-toggle>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+    </div>
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+    <div class="awning" aria-hidden="true"></div>
+    <div class="drawer__head">
+      <p class="drawer__title">メニュー<small>どこへ行こう？</small></p>
+      <button class="drawer__close" type="button" data-menu-close aria-label="メニューを閉じる">×</button>
+    </div>
+    <ul class="drawer__list">
+      <li data-c="mustard"><a href="index.html"><span class="drawer__ico" aria-hidden="true">🏠</span><span><b>ホーム</b><small>入り口にもどる</small></span></a></li>
+      <li data-c="red"><a href="exhibits.html" aria-current="page"><span class="drawer__ico" aria-hidden="true">🎪</span><span><b>企画展示一覧</b><small>クラス・部活の出し物</small></span></a></li>
+      <li data-c="blue"><a href="timetable.html"><span class="drawer__ico" aria-hidden="true">🎭</span><span><b>公演タイムテーブル</b><small>ステージの時間割</small></span></a></li>
+      <li data-c="mustard"><a href="news.html"><span class="drawer__ico" aria-hidden="true">📣</span><span><b>実行委員会からのお知らせ</b><small>大切な連絡はここ</small></span></a></li>
+      <li data-c="green"><a href="lostfound.html"><span class="drawer__ico" aria-hidden="true">🔍</span><span><b>落し物掲示板</b><small>届いている落し物</small></span></a></li>
+    </ul>
+    <p class="drawer__foot">市川学園文化祭実行委員会</p>
+  </nav>
+
+  <main id="main" class="theme-red">
+
+    <section class="page-hero">
+      <div class="bunting" aria-hidden="true"></div>
+      <div class="page-hero__plate">
+        <span class="page-hero__ico" aria-hidden="true">🎪</span>
+        <h1 class="page-hero__title">企画展示一覧</h1>
+        <p class="page-hero__lead">クラスや部活のお店を、のぞいてみよう</p>
+      </div>
+    </section>
+
+    <nav class="crumbs" aria-label="現在のページ">
+      <a href="index.html">ホーム</a> ＞ <span aria-current="page">企画展示一覧</span>
+    </nav>
+
+    <div class="section" data-filter-root>
+      <div class="tools">
+        <label class="search">
+          <span class="search__ico" aria-hidden="true">🔍</span>
+          <input type="search" placeholder="企画名・団体名・場所で探す" data-search aria-label="企画を検索">
+        </label>
+        <div class="chips" role="group" aria-label="カテゴリで絞り込む">
+          <button class="chip" type="button" data-chip="all" aria-pressed="true">すべて</button>
+          <button class="chip" type="button" data-chip="food" aria-pressed="false">飲食</button>
+          <button class="chip" type="button" data-chip="exhibit" aria-pressed="false">展示</button>
+          <button class="chip" type="button" data-chip="experience" aria-pressed="false">体験</button>
+          <button class="chip" type="button" data-chip="goods" aria-pressed="false">物販</button>
+        </div>
+      </div>
+
+      <p class="result-count" aria-live="polite"><b data-count>10</b> 件の企画</p>
+
+      <!-- ★企画は<li>を1つ足すだけで増やせます（data-category は food / exhibit / experience / goods） -->
+      <ul class="shop-list">
+<ul class="shop-list">
+
+  <li class="shop" data-item data-category="exhibit">
+
+  スプラトゥーン5.4｜5年4組｜北館4階｜スプラトゥーンを本格的に再現！
+
+</li>
+
+<li class="shop" data-item data-category="exhibit">
+
+  NAWAKE｜5年7組｜北館4階｜このSASUKEを完全制覇、NAWAKE？
+
+</li>
+
+</ul>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="bunting" aria-hidden="true"></div>
+    <div class="site-footer__body">
+      <p class="site-footer__name">市川学園文化祭</p>
+      <p class="site-footer__sub">文化祭実行委員会</p>
+      <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="timetable.html">公演タイムテーブル</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="lostfound.html">落し物掲示板</a></li>
+      </ul>
+      <p class="copy">© 2026 市川学園文化祭実行委員会</p>
+    </div>
+    <div class="pavement" aria-hidden="true"></div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="ページの先頭へ戻る">↑</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF7E6">
+  <title>市川学園なずな祭 ホームページ</title>
+  <meta name="description" content="市川学園なずな祭のホームページ。企画展示、公演タイムテーブル、実行委員会からのお知らせ、落し物掲示板をご案内します。">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<div class="app">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html" aria-label="市川学園なずな祭 ホームへ">
+        <span class="brand__mark" aria-hidden="true">祭</span>
+
+        <span class="brand__text">
+          <small>市川学園</small>
+          <strong>なずな祭</strong>
+        </span>
+      </a>
+
+      <button
+        class="menu-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="drawer"
+        aria-label="メニューを開閉する"
+        data-menu-toggle
+      >
+        <span class="menu-btn__icon" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span class="menu-btn__label">メニュー</span>
+      </button>
+    </div>
+
+    <div class="awning" aria-hidden="true"></div>
+  </header>
+
+
+  <!-- ===== ハンバーガーメニュー ===== -->
+  <div class="drawer-overlay" data-menu-close></div>
+
+  <nav class="drawer" id="drawer" aria-label="メインメニュー">
+    <div class="awning" aria-hidden="true"></div>
+
+    <div class="drawer__head">
+      <p class="drawer__title">
+        メニュー
+        <small>どこへ行こう？</small>
+      </p>
+
+      <button
+        class="drawer__close"
+        type="button"
+        data-menu-close
+        aria-label="メニューを閉じる"
+      >
+        ×
+      </button>
+    </div>
+
+    <ul class="drawer__list">
+      <li data-c="mustard">
+        <a href="index.html" aria-current="page">
+          <span class="drawer__ico" aria-hidden="true">🏠</span>
+          <span>
+            <b>ホーム</b>
+            <small>入り口にもどる</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="red">
+        <a href="exhibits.html">
+          <span class="drawer__ico" aria-hidden="true">🎪</span>
+          <span>
+            <b>企画展示一覧</b>
+            <small>クラス・部活の出し物</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="blue">
+        <a href="timetable.html">
+          <span class="drawer__ico" aria-hidden="true">🎭</span>
+          <span>
+            <b>公演タイムテーブル</b>
+            <small>ステージの時間割</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="mustard">
+        <a href="news.html">
+          <span class="drawer__ico" aria-hidden="true">📣</span>
+          <span>
+            <b>実行委員会からのお知らせ</b>
+            <small>大切な連絡はここ</small>
+          </span>
+        </a>
+      </li>
+
+      <li data-c="green">
+        <a href="lostfound.html">
+          <span class="drawer__ico" aria-hidden="true">🔍</span>
+          <span>
+            <b>落し物掲示板</b>
+            <small>届いている落し物</small>
+          </span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="drawer__foot">
+      市川学園なずな祭実行委員会
+    </p>
+  </nav>
+
+
+  <main id="main">
+
+    <!-- ===== ホーム ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="lanterns" aria-hidden="true">
+        <span class="lantern"><b>な</b></span>
+        <span class="lantern"><b>ず</b></span>
+        <span class="lantern"><b>な</b></span>
+        <span class="lantern"><b>祭</b></span>
+      </div>
+
+      <div class="hero__sign">
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__school">市川学園</span>
+          <span class="hero__fest">なずな祭</span>
+        </h1>
+
+        <p class="hero__catch">
+          なずな一番街
+        </p>
+      </div>
+
+
+      <!-- ===== なずな祭の写真 ===== -->
+      <div class="hero__photo">
+        <img
+          src="poster.png"
+          alt="なずな祭のポスター"
+          width="1086"
+          height="1536"
+        >
+      </div>
+
+
+      <!-- ★開催日は実際の日程に書きかえてください -->
+      <p class="hero__date">
+        <span>開催日</span>
+        9月19日（土）・20日（日）
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn" href="exhibits.html">
+          企画をのぞく
+        </a>
+
+        <a class="btn btn--ghost" href="timetable.html">
+          ステージを見る
+        </a>
+      </div>
+
+    </section>
+
+
+    <!-- ===== 通りのご案内 ===== -->
+    <section class="section" aria-labelledby="street-title">
+
+      <h2 class="sec-title" id="street-title">
+        通りのご案内
+      </h2>
+
+      <ul class="street">
+
+        <li>
+          <a class="shopfront shopfront--red" href="exhibits.html">
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shopfront__body">
+              <span class="shopfront__ico" aria-hidden="true">
+                🎪
+              </span>
+
+              <strong>企画展示一覧</strong>
+
+              <small>
+                クラス・部活の出し物をさがす
+              </small>
+            </div>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="shopfront shopfront--blue" href="timetable.html">
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shopfront__body">
+              <span class="shopfront__ico" aria-hidden="true">
+                🎭
+              </span>
+
+              <strong>公演タイムテーブル</strong>
+
+              <small>
+                ステージの時間をチェック
+              </small>
+            </div>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="shopfront shopfront--mustard" href="news.html">
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shopfront__body">
+              <span class="shopfront__ico" aria-hidden="true">
+                📣
+              </span>
+
+              <strong>実行委員会からのお知らせ</strong>
+
+              <small>
+                大切な連絡はこちら
+              </small>
+            </div>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="shopfront shopfront--green" href="lostfound.html">
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shopfront__body">
+              <span class="shopfront__ico" aria-hidden="true">
+                🔍
+              </span>
+
+              <strong>落し物掲示板</strong>
+
+              <small>
+                見つかった落し物を確認
+              </small>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- ===== 新着のお知らせ ===== -->
+    <section class="section" aria-labelledby="news-title">
+
+      <h2 class="sec-title" id="news-title">
+        新着のお知らせ
+      </h2>
+
+      <ul class="news-mini">
+
+        <li>
+          <a href="news.html#n1">
+            <div class="news-mini__meta">
+              <time datetime="2026-09-15">9月15日</time>
+              <span class="tag tag--red">重要</span>
+            </div>
+
+            <p class="news-mini__title">
+              ご来場前にご確認ください（入場方法・持ち物）
+            </p>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="news.html#n2">
+            <div class="news-mini__meta">
+              <time datetime="2026-09-12">9月12日</time>
+              <span class="tag tag--blue">お知らせ</span>
+            </div>
+
+            <p class="news-mini__title">
+              パンフレットの配布場所について
+            </p>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="news.html#n3">
+            <div class="news-mini__meta">
+              <time datetime="2026-09-10">9月10日</time>
+              <span class="tag tag--blue">お知らせ</span>
+            </div>
+
+            <p class="news-mini__title">
+              企画・展示の情報を更新しました
+            </p>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="more-link">
+        <a href="news.html">
+          お知らせをすべて見る
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- ===== 気になる企画 ===== -->
+    <section class="section" aria-labelledby="pick-title">
+
+      <h2 class="sec-title" id="pick-title">
+        のぞいてみたい一軒
+      </h2>
+
+      <ul class="hscroll">
+
+        <li class="shop" data-category="food">
+          <a class="shop__link" href="exhibits.html#e1">
+
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shop__body">
+
+              <div class="shop__meta">
+                <span class="tag">飲食</span>
+                <span>校庭 屋台エリア</span>
+              </div>
+
+              <h3 class="shop__title">
+                まる福 たこ焼き
+              </h3>
+
+              <p class="shop__org">
+                2年A組
+              </p>
+
+              <p class="shop__desc">
+                外はカリッ、中はとろり。焼きたてをどうぞ。
+              </p>
+
+            </div>
+          </a>
+        </li>
+
+
+        <li class="shop" data-category="experience">
+          <a class="shop__link" href="exhibits.html#e5">
+
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shop__body">
+
+              <div class="shop__meta">
+                <span class="tag">体験</span>
+                <span>理科棟 実験室</span>
+              </div>
+
+              <h3 class="shop__title">
+                サイエンスショー
+              </h3>
+
+              <p class="shop__org">
+                科学部
+              </p>
+
+              <p class="shop__desc">
+                身近な材料で不思議な現象を体験できます。
+              </p>
+
+            </div>
+          </a>
+        </li>
+
+
+        <li class="shop" data-category="exhibit">
+          <a class="shop__link" href="exhibits.html#e4">
+
+            <div class="awning" aria-hidden="true"></div>
+
+            <div class="shop__body">
+
+              <div class="shop__meta">
+                <span class="tag">展示</span>
+                <span>本館3階</span>
+              </div>
+
+              <h3 class="shop__title">
+                写真展「まちの色」
+              </h3>
+
+              <p class="shop__org">
+                写真部
+              </p>
+
+              <p class="shop__desc">
+                部員が切りとった、見慣れた街の表情。
+              </p>
+
+            </div>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="more-link">
+        <a href="exhibits.html">
+          企画展示をすべて見る
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- ===== 開催のごあんない ===== -->
+    <section class="section" aria-labelledby="info-title">
+
+      <h2 class="sec-title" id="info-title">
+        開催のごあんない
+      </h2>
+
+      <!-- ★実際の情報に書きかえてください -->
+      <dl class="info">
+
+        <div>
+          <dt>日にち</dt>
+          <dd>9月19日（土）・20日（日）</dd>
+        </div>
+
+        <div>
+          <dt>時間</dt>
+          <dd>9:00 〜 10:00</dd>
+        </div>
+
+        <div>
+          <dt>場所</dt>
+          <dd>市川学園（千葉県市川市本北方2-38-1）</dd>
+        </div>
+
+        <div>
+          <dt>ご来場</dt>
+          <dd>
+            入場方法や持ち物は、お知らせページをご確認ください。
+          </dd>
+        </div>
+
+      </dl>
+
+    </section>
+
+  </main>
+
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+
+    <div class="bunting" aria-hidden="true"></div>
+
+    <div class="site-footer__body">
+
+      <p class="site-footer__name">
+        市川学園なずな祭
+      </p>
+
+      <p class="site-footer__sub">
+        なずな祭実行委員会
+      </p>
+
+      <ul class="footer-links">
+        <li>
+          <a href="exhibits.html">企画展示一覧</a>
+        </li>
+
+        <li>
+          <a href="timetable.html">公演タイムテーブル</a>
+        </li>
+
+        <li>
+          <a href="news.html">お知らせ</a>
+        </li>
+
+        <li>
+          <a href="lostfound.html">落し物掲示板</a>
+        </li>
+      </ul>
+
+      <p class="copy">
+        © 2026 市川学園なずな祭実行委員会
+      </p>
+
+    </div>
+
+    <div class="pavement" aria-hidden="true"></div>
+
+  </footer>
+
+
+  <button
+    class="to-top"
+    type="button"
+    aria-label="ページの先頭へ戻る"
+  >
+    ↑
+  </button>
+
+</div>
+
+</body>
+</html>
